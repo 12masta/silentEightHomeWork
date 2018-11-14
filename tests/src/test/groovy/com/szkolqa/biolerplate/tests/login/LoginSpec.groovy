@@ -8,7 +8,7 @@ import spock.lang.Unroll
 @Epic("LoginSpec")
 @Feature("LoginSpec")
 class LoginSpec extends BaseSpec {
-    def 'successfull login'() {
+    def "successfull login"() {
         when: "user provides correct login data"
         loginPage.typeLogin(login).typePassword(password)
         and: "click login"
@@ -23,7 +23,7 @@ class LoginSpec extends BaseSpec {
     }
 
     @Unroll
-    def 'login with wrong data'() {
+    def "login with wrong data"() {
         when: "user provides wrong login data"
         loginPage.typeLogin(login).typePassword(password)
         and: "click login"

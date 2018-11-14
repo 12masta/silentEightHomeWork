@@ -40,4 +40,9 @@ public class WebElementHandler {
         }
         return isDisplayed;
     }
+
+    public boolean isDisabled(WebElement webElement) {
+        return webElement.getAttribute("class").contains("disabled")
+                && webElement.getAttribute("disabled").equals("true");
+    }
 }

@@ -24,11 +24,8 @@ public class LoginPageWebImpl extends BasePage implements LoginPage{
 
     private final String relativeUrl = "/cas/login";
 
-    private WebElementHandler webElementHandler;
-
     public LoginPageWebImpl(WebDriver driver) {
         super(driver);
-        this.webElementHandler = new WebElementHandler(driver);
     }
 
     @Override

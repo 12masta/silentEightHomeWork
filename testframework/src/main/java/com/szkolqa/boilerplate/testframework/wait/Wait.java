@@ -41,8 +41,12 @@ public class Wait {
         wait.until((ExpectedCondition<Boolean>) driver -> element.findElements(by).size() > numberOfElements);
     }
 
-    public void invisibilityOf(WebElement taskFormContainer) {
-        wait.until(ExpectedConditions.invisibilityOf(taskFormContainer));
+    public void invisibilityOf(WebElement webElements) {
+        wait.until(ExpectedConditions.invisibilityOf(webElements));
+    }
+
+    public void invisibilityOfAllElements(List<WebElement> webElements) {
+        wait.until(ExpectedConditions.invisibilityOfAllElements(webElements));
     }
 
     public void elementsToBeClickable(WebElement element, By by) {
