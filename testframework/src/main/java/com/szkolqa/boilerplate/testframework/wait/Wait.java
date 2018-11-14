@@ -50,7 +50,11 @@ public class Wait {
         elements.forEach(this::elementToBeClickable);
     }
 
-    public void waitUntilPageIsFullyLoaded() {
+    public void untilPageIsFullyLoaded() {
         wait.until(driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete"));
+    }
+
+    public void untilPageIsLoaded(String relativeUrl) {
+        wait.until(driver -> driver.getCurrentUrl().contains(relativeUrl));
     }
 }

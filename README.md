@@ -1,4 +1,4 @@
-# Test automation boilerplate
+# SILENT EIGHT HOMEWORK
 
 ## How to build
 
