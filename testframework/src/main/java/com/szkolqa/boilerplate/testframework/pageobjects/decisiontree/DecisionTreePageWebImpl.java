@@ -9,9 +9,11 @@ import java.util.List;
 
 public class DecisionTreePageWebImpl extends BasePage implements DecisionTreePage {
 
+    //TODO: create proper ids for this buttons
     @FindBy(xpath = "//table[@class='decision-trees-list active-decision-trees']")
     private WebElement activeDecisionTreesTable;
 
+    //TODO: create proper ids for this buttons
     @FindBy(xpath = "//div[@class='loading']")
     private List<WebElement> loadingScreens;
 
