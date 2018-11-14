@@ -13,4 +13,6 @@ public interface LoginPage {
     boolean validationMessageIsDisplayed();
 
     boolean isDisplayed();
+
+    LoginPage clickLoginExpectValidationError();
 }

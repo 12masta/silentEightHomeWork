@@ -27,7 +27,7 @@ class LoginSpec extends BaseSpec {
         when: "user provides wrong login data"
         loginPage.typeLogin(login).typePassword(password)
         and: "click login"
-        loginPage.clickLogin()
+        loginPage.clickLoginExpectValidationError()
 
         then: "validation message is displayed"
         loginPage.validationMessageIsDisplayed()
