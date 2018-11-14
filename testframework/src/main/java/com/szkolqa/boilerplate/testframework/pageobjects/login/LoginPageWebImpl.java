@@ -3,7 +3,6 @@ package com.szkolqa.boilerplate.testframework.pageobjects.login;
 import com.szkolqa.boilerplate.testframework.pageobjects.BasePage;
 import com.szkolqa.boilerplate.testframework.pageobjects.decisiontree.DecisionTreePage;
 import com.szkolqa.boilerplate.testframework.pageobjects.decisiontree.DecisionTreePageWebImpl;
-import com.szkolqa.boilerplate.testframework.webelements.WebElementHandler;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,11 +23,8 @@ public class LoginPageWebImpl extends BasePage implements LoginPage{
 
     private final String relativeUrl = "/cas/login";
 
-    private WebElementHandler webElementHandler;
-
     public LoginPageWebImpl(WebDriver driver) {
         super(driver);
-        this.webElementHandler = new WebElementHandler(driver);
     }
 
     @Override
@@ -58,5 +54,11 @@ public class LoginPageWebImpl extends BasePage implements LoginPage{
     public boolean isDisplayed() {
         wait.untilPageIsLoaded(relativeUrl);
         return urlResolver.getUrlRelativePath().equals(relativeUrl);
+    }
+
+    @Override
+    public LoginPage clickLoginExpectValidationError() {
+        webElementHandler.click(submitButton);
+        return new LoginPageWebImpl(driver);
     }
 }

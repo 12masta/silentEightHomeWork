@@ -10,7 +10,7 @@ import spock.lang.Specification
 class ConfigSpec extends Specification {
 
     @Story("should import configuration")
-    def 'should import configuration'() {
+    def "should import configuration"() {
         given:
         def conf = new ConfigSlurper("dev")
                 .parse(getClass().getResource("/config.groovy").toURI().toURL())

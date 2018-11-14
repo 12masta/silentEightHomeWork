@@ -7,7 +7,7 @@ import io.qameta.allure.Feature
 @Epic("InitSpec")
 @Feature("InitSpec")
 class InitSpec extends BaseSpec {
-    def 'base page login check'(){
+    def "base page login check"() {
         expect:
         loginPage.getCurrentRelativeUrl().contains("/cas/login?service")
     }
