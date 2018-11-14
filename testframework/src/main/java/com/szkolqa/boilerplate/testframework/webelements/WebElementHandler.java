@@ -13,7 +13,7 @@ public class WebElementHandler {
     private static Logger logger = LoggerFactory.getLogger(WebElementHandler.class);
 
 
-    public WebElementHandler(WebDriver driver){
+    public WebElementHandler(WebDriver driver) {
         this.driver = driver;
         this.wait = new Wait(this.driver);
     }
