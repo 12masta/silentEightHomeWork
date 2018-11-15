@@ -63,6 +63,8 @@ public class Api {
 
     private void removeAllUsedAssignments(int treeId) {
         Assignments assignments = new Assignments();
+        assignments.setToActivate(new ArrayList<>());
+        assignments.setToAssign(new ArrayList<>());
         assignments.setToDeactivate(AssignmentsTestData.getAllAssignments());
         assignments.setToUnassign(AssignmentsTestData.getAllAssignments());
         try {
