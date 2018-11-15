@@ -15,6 +15,6 @@ class ConfigSpec extends Specification {
         def conf = new ConfigSlurper("dev")
                 .parse(getClass().getResource("/config.groovy").toURI().toURL())
         expect:
-        conf.url == 'http://sens.silenteight.com/'
+        conf.url == 'https://sens.silenteight.com/'
     }
 }

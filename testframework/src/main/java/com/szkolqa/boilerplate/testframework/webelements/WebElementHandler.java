@@ -1,6 +1,7 @@
 package com.szkolqa.boilerplate.testframework.webelements;
 
 import com.szkolqa.boilerplate.testframework.wait.Wait;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
@@ -13,7 +14,7 @@ public class WebElementHandler {
     private static Logger logger = LoggerFactory.getLogger(WebElementHandler.class);
 
 
-    public WebElementHandler(WebDriver driver){
+    public WebElementHandler(WebDriver driver) {
         this.driver = driver;
         this.wait = new Wait(this.driver);
     }
@@ -44,5 +45,9 @@ public class WebElementHandler {
     public boolean isDisabled(WebElement webElement) {
         return webElement.getAttribute("class").contains("disabled")
                 && webElement.getAttribute("disabled").equals("true");
+    }
+
+    public void scrollToElement(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

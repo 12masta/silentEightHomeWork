@@ -17,7 +17,7 @@ public class ScreenshotListenerFinder {
                 .stream()
                 .filter(x -> x instanceof ScreenshotOnFailureListener)
                 .findFirst();
-        if(optionalScreenshotListener.isPresent()){
+        if (optionalScreenshotListener.isPresent()) {
             return (ScreenshotOnFailureListener) optionalScreenshotListener.get();
         }
         logger.warn("ScreenshotOnFailureListener is not active");
