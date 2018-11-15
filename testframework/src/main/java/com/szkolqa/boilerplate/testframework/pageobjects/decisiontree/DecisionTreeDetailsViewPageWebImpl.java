@@ -12,6 +12,10 @@ public class DecisionTreeDetailsViewPageWebImpl extends BasePage implements Deci
     @FindBy(xpath = "//div[@class='page-header-options']")
     private WebElement pageHeaderOptions;
 
+    //TODO: create proper ids for this buttons
+    @FindBy(xpath = "//div[@class='notification success']")
+    private WebElement notificationSuccess;
+
     public DecisionTreeDetailsViewPageWebImpl(WebDriver driver) {
         super(driver);
     }
@@ -20,5 +24,10 @@ public class DecisionTreeDetailsViewPageWebImpl extends BasePage implements Deci
     public EditAssignmentModalPage clickEditAssignments() {
         webElementHandler.click(pageHeaderOptions.findElements(By.tagName("button")).get(1));
         return new EditAssignmentModalPageWebImpl(driver);
+    }
+
+    @Override
+    public boolean isSuccessfulNotificationDisplayed() {
+        return webElementHandler.isDisplayed(notificationSuccess);
     }
 }

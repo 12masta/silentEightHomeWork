@@ -1,6 +1,6 @@
 package com.szkolqa.biolerplate.tests
 
-
+import com.anotherchrisberry.spock.extensions.retry.RetryOnFailure
 import com.szkolqa.boilerplate.testframework.driver.Driver
 import com.szkolqa.boilerplate.testframework.listeners.screenshot.failure.ScreenshotListenerFinder
 import com.szkolqa.boilerplate.testframework.pageobjects.login.LoginPageWebImpl
@@ -9,7 +9,7 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import spock.lang.Specification
 
-//@RetryOnFailure(times = 3)
+@RetryOnFailure(times = 3)
 class BaseSpec extends Specification {
     public static String env = System.getProperty("env", "dev")
     public static String browser = System.getProperty("browser", "")

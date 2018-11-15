@@ -1,5 +1,5 @@
 environments {
     dev {
-        url = 'http://sens.silenteight.com/'
+        url = 'https://sens.silenteight.com/'
     }
 }
