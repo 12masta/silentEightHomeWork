@@ -10,8 +10,8 @@ import io.qameta.allure.Feature
 @Feature("EditAssignmentSpec")
 class EditAssignmentSpec extends BaseSpec {
 
-    def "Open edit assignment without changes"() {
-        when: "user open edit assignments"
+    def "Open edit assignment without changes for decision tree in use"() {
+        when: "user open edit assignments for decision tree in use"
         def editAssignmentModalPage = loginPage.typeLogin(login)
                 .typePassword(password)
                 .clickLogin()
